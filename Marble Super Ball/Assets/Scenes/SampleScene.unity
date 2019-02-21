@@ -743,7 +743,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2fae7538c26777348bd8403fbf40fc23, type: 2}
+  - {fileID: 2100000, guid: 71c883b87dd92b749aa1e14858d77566, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -958,8 +958,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1224564379
-CapsuleCollider:
+--- !u!65 &1224564379
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -967,10 +967,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000004}
+  m_Center: {x: 0.000000059604645, y: -3.792901e-15, z: -0.00000008940696}
 --- !u!23 &1224564380
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1038,6 +1037,7 @@ GameObject:
   - component: {fileID: 1250624595}
   - component: {fileID: 1250624594}
   - component: {fileID: 1250624593}
+  - component: {fileID: 1250624597}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1052,7 +1052,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250624591}
   m_LocalRotation: {x: -0, y: 0.93768746, z: -0, w: 0.34747985}
-  m_LocalPosition: {x: -77.47, y: 8.86, z: 78.5}
+  m_LocalPosition: {x: -84.37, y: 10.48, z: 84.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1523422602}
@@ -1128,6 +1128,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250624591}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1250624597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250624591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb75f9a76a2cfb34a86a44482473767b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPos: {fileID: 1565550015}
 --- !u!1 &1264213840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1443,34 @@ Transform:
   m_Father: {fileID: 1724299103}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 15.1, y: 120.19301, z: -2.601}
+--- !u!1 &1565550014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565550015}
+  m_Layer: 0
+  m_Name: Respawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565550015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1565550014}
+  m_LocalRotation: {x: -0, y: 0.93768746, z: -0, w: 0.34747985}
+  m_LocalPosition: {x: -84.37, y: 10.48, z: 84.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 139.33301, z: 0}
 --- !u!1 &1599990924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1567,7 @@ GameObject:
   - component: {fileID: 1724299104}
   m_Layer: 0
   m_Name: Level blocks
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1760,8 +1800,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &2047007163
-CapsuleCollider:
+--- !u!65 &2047007163
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1769,10 +1809,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000005}
+  m_Center: {x: 0.000000059604645, y: -9.951769e-16, z: -0.00000008940696}
 --- !u!23 &2047007164
 MeshRenderer:
   m_ObjectHideFlags: 0
