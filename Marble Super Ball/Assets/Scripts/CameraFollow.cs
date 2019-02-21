@@ -72,8 +72,16 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        // If moving backwards, speed up the turn time. Otherwise, set to standard
+        TurnTime =
+            currentMotion == MotionStatus.Backward ?
+                0.25f
+            :
+                0.5f
+        ;
+
         // Get current camera rotation and reset the target rotation's value.
-        currentRotation = gameObject.transform.rotation.eulerAngles;
+        currentRotation = gameObject.transform.localRotation.eulerAngles;
         currentRotation.x -=
             currentRotation.x > 180 ?
                 360

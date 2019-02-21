@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,13 +139,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 117908533}
-  m_LocalRotation: {x: 0.107410654, y: 0.89176446, z: -0.2898516, w: 0.33046216}
-  m_LocalPosition: {x: -95.84, y: 33.09, z: 97.1}
+  m_LocalRotation: {x: 0.32556805, y: 0, z: 0, w: 0.9455186}
+  m_LocalPosition: {x: 0.2807865, y: 22.61, z: -17.274498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 36.012, y: 139.33301, z: 0}
+  m_Father: {fileID: 1523422602}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 38, y: 0, z: 0}
 --- !u!81 &117908535
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1064,14 +1064,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250624591}
-  m_LocalRotation: {x: -0, y: 0.93768746, z: -0, w: 0.34747985}
+  m_LocalRotation: {x: 0, y: 0.9135455, z: 0, w: 0.40673664}
   m_LocalPosition: {x: -84.37, y: 10.48, z: 84.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1523422602}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 139.33301, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 132, z: 0}
 --- !u!54 &1250624593
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1350,7 +1350,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 117908534}
   m_Father: {fileID: 1250624592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1361,13 +1362,13 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1523422601}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c97d6d87ab40d54292f765b3b995f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idleAngle: 0
-  tiltAngle: 25
+  tiltAngle: 10
   turnAngle: 15
   turnDeadzone: 0
 --- !u!1 &1525928770
