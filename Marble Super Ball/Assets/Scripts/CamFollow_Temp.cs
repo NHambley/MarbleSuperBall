@@ -6,9 +6,14 @@ public class CamFollow_Temp : MonoBehaviour
 {
     public GameObject ball;
 
-	// Update is called once per frame
-	void Update ()
+    Vector3 distance;
+    private void Start()
     {
-        transform.LookAt(ball.transform);
-	}
+        distance = transform.position - ball.transform.position;
+    }
+    // Update is called once per frame
+    void Update ()
+    {
+        transform.position = ball.transform.position + distance;
+    }
 }
