@@ -7,15 +7,31 @@ public class GyroRot : MonoBehaviour {
     private Vector3 deadZone = Vector3.zero;
     private Matrix4x4 calibrateMat;
 
+    bool isGyro;
 	// Use this for initialization
-	void Start () {
-        CalibrateAccel();
+	void Start ()
+    {
+        if(SystemInfo.supportsGyroscope == true)
+        {
+            isGyro = true;
+            transform.rotation = Input.gyro.attitude;
+        }
+        else
+            CalibrateAccel();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-        Vector3 accel = calibrateMat.MultiplyVector(Input.acceleration);
-        transform.rotation *= Quaternion.Euler(accel.y,-accel.x, 0);
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if (isGyro)
+            transform.rotation = Input.gyro.attitude;
+        else
+        {
+            Vector3 accel = calibrateMat.MultiplyVector(Input.acceleration);
+            transform.rotation *= Quaternion.Euler(accel.y, -accel.x, 0);
+        }
+       
 	}
 
     // set deadzone
