@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour {
 
     private float tiltTime = 0.5f;
     private float turnTime = 0.5f;
-
+    
     public int idleAngle = 0;
     public int tiltAngle = 25;
     public int turnAngle = 15;
@@ -40,7 +40,7 @@ public class CameraFollow : MonoBehaviour {
         }
     }
     public float turnDeadzone;
-
+    
     MotionStatus currentMotion;
     Vector3 currentRotation;
     Vector3 targetRotation;
@@ -59,6 +59,7 @@ public class CameraFollow : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        transform.rotation = transform.parent.rotation;
         currentMotion = MotionStatus.Idle;
         currentRotation = Vector3.zero;
         targetRotation = Vector3.zero;
@@ -79,9 +80,8 @@ public class CameraFollow : MonoBehaviour {
             :
                 0.5f
         ;
-
+        
         // Get current camera rotation and reset the target rotation's value.
-        currentRotation = gameObject.transform.localRotation.eulerAngles;
         currentRotation.x -=
             currentRotation.x > 180 ?
                 360
@@ -186,10 +186,14 @@ public class CameraFollow : MonoBehaviour {
                     motionRotation.y
         ;
 
-        // Apply motionRotation to camera
-        gameObject.transform.Rotate(motionRotation);
-        string debugString = string.Format("MoveStatus: {0} - CurrentTurn {1} - TargetTurn: {2}",
-            currentMotion, currentRotation.y, targetRotation.y);
-        Debug.Log(debugString);
+        // Apply motionRotation to camera and currentRotation
+        transform.Rotate(motionRotation);
+        currentRotation += motionRotation;
+
+        // Snap the rotation to the opposite angle of the parent's x rotation
+        Vector3 tempRot = transform.rotation.eulerAngles;
+        tempRot.x = currentRotation.x;
+        tempRot.y = transform.parent.eulerAngles.y + currentRotation.y;
+        transform.rotation = Quaternion.Euler(tempRot);
     }
 }
