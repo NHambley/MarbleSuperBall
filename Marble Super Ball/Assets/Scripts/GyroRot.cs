@@ -14,7 +14,9 @@ public class GyroRot : MonoBehaviour {
         if(SystemInfo.supportsGyroscope == true)
         {
             isGyro = true;
+            Input.gyro.enabled = true;
             transform.rotation = Input.gyro.attitude;
+            Debug.Log("Gyroscope detected");
         }
         else
             CalibrateAccel();
