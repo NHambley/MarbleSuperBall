@@ -8,6 +8,7 @@ public class Nudge : MonoBehaviour {
     public Vector2 direction;
     public bool directionChosen;
 
+    public bool swipe = true;
     // Use this for initialization
     void Start () {
 		
@@ -33,7 +34,7 @@ public class Nudge : MonoBehaviour {
 
         
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && swipe)
         {
             
 
