@@ -7,16 +7,22 @@ public class GyroRot : MonoBehaviour {
     private Vector3 deadZone = Vector3.zero;
     private Matrix4x4 calibrateMat;
 
+    // used for calculating the quaternion difference between the gyroscope and zero upon game start
+    float xDif;
+    float zDif;
+
+    Quaternion q;
     bool isGyro;
 	// Use this for initialization
 	void Start ()
     {
+        // if a gyroscope is detected establish a "zero" aka a difference between 
         if(SystemInfo.supportsGyroscope == true)
         {
             isGyro = true;
             Input.gyro.enabled = true;
             transform.rotation = Input.gyro.attitude;
-            Debug.Log("Gyroscope detected");
+            SetGyroZero();
         }
         else
             CalibrateAccel();
@@ -27,7 +33,9 @@ public class GyroRot : MonoBehaviour {
     void Update ()
     {
         if (isGyro)
-            transform.rotation = Input.gyro.attitude;
+        {
+            transform.rotation = new Quaternion(q.x- xDif, q.z - zDif, q.y, -q.w);
+        }
         else
         {
             Vector3 accel = calibrateMat.MultiplyVector(Input.acceleration);
@@ -35,6 +43,13 @@ public class GyroRot : MonoBehaviour {
         }
        
 	}
+
+    void SetGyroZero()
+    {
+        q = Input.gyro.attitude;
+        xDif = q.x;
+        zDif = q.z;
+    }
 
     // set deadzone
     void CalibrateAccel()
