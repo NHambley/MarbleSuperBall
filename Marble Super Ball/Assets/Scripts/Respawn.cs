@@ -6,19 +6,39 @@ public class Respawn : MonoBehaviour
 {
     public Transform respawnPos;
 
-	// Check the ball's y value, if it is below -20, "respawn" the ball
+    bool colliding = true;
+    float sepTimer = 3.0f;
+
+	
 	void Update ()
     {
-        if (transform.position.y <= -20f)
-        {
-            // reset the ball position and set forces to 0
-            transform.position = respawnPos.position;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+       if(colliding == false)
+       {
+            sepTimer -= Time.deltaTime;
+
+            if(sepTimer <= 0)
+            {
+                // do respawn things
+                transform.position = respawnPos.position;
+
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
 
-            // reset the map rotation
-            GameObject.FindGameObjectWithTag("Map").transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+                // reset the map rotation
+                GameObject.FindGameObjectWithTag("Map").transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+       }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        colliding = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        colliding = true;
+        sepTimer = 3.0f;
     }
 }
