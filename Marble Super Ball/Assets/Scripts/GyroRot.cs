@@ -12,7 +12,10 @@ public class GyroRot : MonoBehaviour {
     float zDif;
 
     Quaternion q;
+    Quaternion d;
     bool isGyro;
+    bool setGyro;
+    int delay;
 	// Use this for initialization
 	void Start ()
     {
@@ -21,8 +24,8 @@ public class GyroRot : MonoBehaviour {
         {
             isGyro = true;
             Input.gyro.enabled = true;
-            transform.rotation = Input.gyro.attitude;
-            SetGyroZero();
+            setGyro = false;
+            delay = 0;
         }
         else
             CalibrateAccel();
@@ -34,21 +37,34 @@ public class GyroRot : MonoBehaviour {
     {
         if (isGyro)
         {
-            transform.rotation = new Quaternion(q.x- xDif, q.z - zDif, q.y, -q.w);
+            if(setGyro == false)
+            {
+                if (delay == 1)
+                {
+                    d = Input.gyro.attitude;
+                    setGyro = true;
+                }
+                else
+                {
+                    delay++;
+                }
+            }
+            else
+            {
+                q = Input.gyro.attitude;
+                transform.rotation = new Quaternion(q.x,q.z,q.y,-q.w);
+            }
         }
         else
         {
             Vector3 accel = calibrateMat.MultiplyVector(Input.acceleration);
             transform.rotation *= Quaternion.Euler(accel.y, -accel.x, 0);
         }
-       
 	}
 
     void SetGyroZero()
     {
-        q = Input.gyro.attitude;
-        xDif = q.x;
-        zDif = q.z;
+        d = Input.gyro.attitude;
     }
 
     // set deadzone
@@ -58,5 +74,16 @@ public class GyroRot : MonoBehaviour {
         Quaternion rotateQuaternion = Quaternion.FromToRotation(new Vector3(0f, 0f, -1f), deadZone);
         Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, rotateQuaternion, new Vector3(1f, 1f, 1f));
         calibrateMat = matrix.inverse;
+    }
+
+    protected void OnGUI()
+    {
+        GUI.skin.label.fontSize = Screen.width / 20;
+
+        GUILayout.Label("Orientation: " + Screen.orientation);
+        GUILayout.Label("input.gyro.attitude: " + Input.gyro.attitude);
+        GUILayout.Label("Current Rotation: " + q);
+        GUILayout.Label("Dead Zone: " + d);
+        GUILayout.Label("Set: " + setGyro);
     }
 }
