@@ -52,7 +52,7 @@ public class GyroRot : MonoBehaviour {
             else
             {
                 q = Input.gyro.attitude;
-                transform.rotation = new Quaternion(q.x,q.z,q.y,-q.w);
+                transform.rotation *= Input.gyro.attitude * new Quaternion(0,0,1,0);
             }
         }
         else
@@ -61,11 +61,6 @@ public class GyroRot : MonoBehaviour {
             transform.rotation *= Quaternion.Euler(accel.y, -accel.x, 0);
         }
 	}
-
-    void SetGyroZero()
-    {
-        d = Input.gyro.attitude;
-    }
 
     // set deadzone
     void CalibrateAccel()
