@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CameraTest.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9295a66f990a9ad46b2c8441207b08e1
   - enabled: 1
     path: Assets/Scenes/Lvl_Easy.unity
     guid: be468e16d23f35342ba75c24a8039249
+  - enabled: 1
+    path: Assets/Scenes/Lvl_Med.unity
+    guid: d33b16141dbe0ca4ca2468a902e2059a
+  - enabled: 1
+    path: Assets/Scenes/Lvl_Hard.unity
+    guid: 59917eacbd5fdba45933b9d002cf9f7f
   m_configObjects: {}

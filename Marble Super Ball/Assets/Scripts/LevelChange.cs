@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelChange : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class LevelChange : MonoBehaviour
+{
+    // set this in the editor on a level basis
+    public string lvlName;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -26,6 +19,6 @@ public class LevelChange : MonoBehaviour {
 
     private void ChangeLevel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(lvlName);
     }
 }
