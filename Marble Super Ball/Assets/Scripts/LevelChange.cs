@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelChange : MonoBehaviour {
 
+    public GameObject player;
+    public string scene;
 	// Use this for initialization
 	void Start () {
-		
+        Debug.Log("hi");
 	}
 	
 	// Update is called once per frame
@@ -15,17 +17,18 @@ public class LevelChange : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.name == "Sphere")
+        if(collision.gameObject == player)
         {
             ChangeLevel();
         }
-        ChangeLevel();
+        Debug.Log(collision);
+        Debug.Log(player);
     }
 
     private void ChangeLevel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(scene);
     }
 }

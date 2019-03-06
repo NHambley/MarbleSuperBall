@@ -129,10 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb14419f4b93c75409a9b680ab875390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0}
-  direction: {x: 0, y: 0}
-  directionChosen: 0
-  swipe: 0
+  swipe: 1
 --- !u!1 &77408921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1584,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4098320277793220, guid: 090043ec5b3324444828a3746309d2ac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.8488238
+      value: -3.176
       objectReference: {fileID: 0}
     - target: {fileID: 4098320277793220, guid: 090043ec5b3324444828a3746309d2ac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1612,6 +1609,21 @@ Prefab:
     - target: {fileID: 4098320277793220, guid: 090043ec5b3324444828a3746309d2ac, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114610528163285834, guid: 090043ec5b3324444828a3746309d2ac,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 34023108}
+    - target: {fileID: 114610528163285834, guid: 090043ec5b3324444828a3746309d2ac,
+        type: 2}
+      propertyPath: scene
+      value: Lvl_Med
+      objectReference: {fileID: 0}
+    - target: {fileID: 65911132130854264, guid: 090043ec5b3324444828a3746309d2ac,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090043ec5b3324444828a3746309d2ac, type: 2}

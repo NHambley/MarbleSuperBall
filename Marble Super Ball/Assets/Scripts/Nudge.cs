@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Nudge : MonoBehaviour {
 
-    public Vector2 startPos;
-    public Vector2 direction;
-    public bool directionChosen;
+    private Vector2 startPos;
+    private Vector2 direction;
+    private bool directionChosen;
 
     public bool swipe = true;
     // Use this for initialization
