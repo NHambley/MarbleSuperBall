@@ -63,10 +63,10 @@ public class Nudge : MonoBehaviour {
         if (directionChosen)
         {
             Vector2 norm = direction.normalized;
-            float horizontal = norm.x;
+            float horizontal = direction.x;
             float vertical = norm.y;
-            Vector3 nforce = new Vector3(norm.x, 0.0f, norm.y);
-            GetComponent<Rigidbody>().AddForceAtPosition(nforce * 200,GetComponent<Rigidbody>().position);
+            Vector3 nforce = new Vector3(norm.x, 0.0f, 0.0f);
+            GetComponent<Rigidbody>().AddForceAtPosition(nforce * 100,GetComponent<Rigidbody>().position);
             directionChosen = false;
         }
     }
