@@ -16,17 +16,22 @@ public class Respawn : MonoBehaviour
        {
             sepTimer -= Time.deltaTime;
 
-            if(sepTimer <= 0)
+            if(sepTimer <= 0 && SystemInfo.supportsGyroscope == false)
             {
-                // do respawn things
-                transform.position = respawnPos.position;
-
-                GetComponent<Rigidbody>().velocity = Vector3.zero;
-                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
+                sepTimer = 3.0f;
 
                 // reset the map rotation
                 GameObject.FindGameObjectWithTag("Map").transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                // do respawn things
+                transform.position = respawnPos.position;
+
+                //GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            }
+            else if(sepTimer <= 0 && SystemInfo.supportsGyroscope == true)
+            {
+                transform.position = respawnPos.position;
             }
        }
     }
@@ -36,7 +41,7 @@ public class Respawn : MonoBehaviour
         colliding = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         colliding = true;
         sepTimer = 3.0f;

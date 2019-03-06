@@ -52,7 +52,7 @@ public class GyroRot : MonoBehaviour {
             else
             {
                 q = Input.gyro.attitude;
-                transform.rotation *= Input.gyro.attitude * new Quaternion(0,0,1,0);
+                transform.rotation = new Quaternion(q.x, q.z, q.y, -q.w);
             }
         }
         else
