@@ -6,8 +6,8 @@ public class Respawn : MonoBehaviour
 {
     public Transform respawnPos;
 
-    bool colliding = true;
-    float sepTimer = 3.0f;
+    public bool colliding = true;
+    public float sepTimer = 3.0f;
 
 	
 	void Update ()
