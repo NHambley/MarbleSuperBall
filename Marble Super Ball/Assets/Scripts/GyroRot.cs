@@ -70,7 +70,7 @@ public class GyroRot : MonoBehaviour {
         Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, rotateQuaternion, new Vector3(1f, 1f, 1f));
         calibrateMat = matrix.inverse;
     }
-
+    /*
     protected void OnGUI()
     {
         GUI.skin.label.fontSize = Screen.width / 20;
@@ -81,4 +81,5 @@ public class GyroRot : MonoBehaviour {
         GUILayout.Label("Dead Zone: " + d);
         GUILayout.Label("Set: " + setGyro);
     }
+    */
 }
