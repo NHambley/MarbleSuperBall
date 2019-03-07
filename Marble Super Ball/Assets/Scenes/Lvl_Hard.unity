@@ -2123,6 +2123,11 @@ Prefab:
       propertyPath: respawnPos
       value: 
       objectReference: {fileID: 984688065}
+    - target: {fileID: 114475631263286146, guid: 12b42293ad2f5a542830559edba0846d,
+        type: 2}
+      propertyPath: swipe
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114066948356482994, guid: 12b42293ad2f5a542830559edba0846d, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 12b42293ad2f5a542830559edba0846d, type: 2}
