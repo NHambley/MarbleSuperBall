@@ -53,6 +53,7 @@ public class GyroRot : MonoBehaviour {
             {
                 q = Input.gyro.attitude;
                 transform.rotation = new Quaternion(q.x, q.z, q.y, -q.w);
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
             }
         }
         else

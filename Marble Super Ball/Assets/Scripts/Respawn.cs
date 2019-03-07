@@ -26,11 +26,12 @@ public class Respawn : MonoBehaviour
                 // do respawn things
                 transform.position = respawnPos.position;
 
-                //GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
                 GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             }
             else if(sepTimer <= 0 && SystemInfo.supportsGyroscope == true)
             {
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
                 transform.position = respawnPos.position;
             }
        }
