@@ -7,14 +7,13 @@ public class LevelChange : MonoBehaviour
 {
     // set this in the editor on a level basis
     public string lvlName;
-
-    private void OnCollisionEnter(Collision collision)
+    public GameObject player;
+    private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.name == "Sphere")
+        if(collision.gameObject == player)
         {
             ChangeLevel();
         }
-        ChangeLevel();
     }
 
     private void ChangeLevel()
