@@ -373,7 +373,7 @@ Prefab:
     - target: {fileID: 114551511821661990, guid: 10ee4e08cd61f0a41ac8dc88fa6b22c8,
         type: 2}
       propertyPath: lvlName
-      value: Lvl_Med
+      value: Lvl_Easy
       objectReference: {fileID: 0}
     - target: {fileID: 65861660340426972, guid: 10ee4e08cd61f0a41ac8dc88fa6b22c8,
         type: 2}
