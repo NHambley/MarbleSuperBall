@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Menu_Main.unity
     guid: 5af45de52279a004c8be513687b7a9da
   - enabled: 1
+    path: Assets/Scenes/JumpTest.unity
+    guid: 442b463f7624ca1408613df75ad8f669
+  - enabled: 1
     path: Assets/Scenes/Lvl_Easy.unity
     guid: be468e16d23f35342ba75c24a8039249
   - enabled: 1
