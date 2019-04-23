@@ -157,11 +157,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114725965544359254, guid: 12b42293ad2f5a542830559edba0846d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114011467322403076, guid: 12b42293ad2f5a542830559edba0846d,
         type: 3}
       propertyPath: respawnPos
@@ -170,6 +165,11 @@ PrefabInstance:
     - target: {fileID: 114475631263286146, guid: 12b42293ad2f5a542830559edba0846d,
         type: 3}
       propertyPath: swipe
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725965544359254, guid: 12b42293ad2f5a542830559edba0846d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 1361746078}
   - component: {fileID: 1361746077}
   - component: {fileID: 1361746076}
+  - component: {fileID: 1361746080}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -495,6 +496,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 25.250002, y: -1.44, z: 0}
+--- !u!45 &1361746080
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361746075}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 194a797b95df37c4ab8aef11ad6b9be9, type: 2}
 --- !u!1001 &1422199818
 PrefabInstance:
   m_ObjectHideFlags: 0
