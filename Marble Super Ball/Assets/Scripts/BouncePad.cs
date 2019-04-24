@@ -31,8 +31,8 @@ public class BouncePad : MonoBehaviour {
     private void Launch(GameObject obj)
     {
 
-        Vector3 direction = transform.forward + transform.up;
-        Vector3 force = direction * 750 * obj.GetComponent<Rigidbody>().mass;
+        Vector3 direction = transform.position - player.transform.position;
+        Vector3 force = direction * 2000 * obj.GetComponent<Rigidbody>().mass;
         obj.GetComponent<Rigidbody>().AddForce(force);
         Debug.Log("Launched");
         Debug.Log(force);
