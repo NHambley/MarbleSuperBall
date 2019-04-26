@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class BouncePad : MonoBehaviour {
     public GameObject player;
+    bool airborn = false;
+    Respawn resScript;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         if (!player)
         {
-            player = GameObject.FindGameObjectWithTag("player");
+            player = GameObject.FindGameObjectWithTag("Player");
         }
-
+        resScript = player.GetComponent<Respawn>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Touched");
         if (collision.gameObject == player)
         {
-            Debug.Log("Touched Player");
             Launch(collision.gameObject);
         }
     }
@@ -32,10 +28,10 @@ public class BouncePad : MonoBehaviour {
     {
 
         Vector3 direction = transform.position - player.transform.position;
-        Vector3 force = direction * 2000 * obj.GetComponent<Rigidbody>().mass;
+        Vector3 force = direction * 250 * obj.GetComponent<Rigidbody>().mass;
+        force.y += 500;
         obj.GetComponent<Rigidbody>().AddForce(force);
-        Debug.Log("Launched");
-        Debug.Log(force);
 
+        resScript.sepTimer += 3;
     }
 }

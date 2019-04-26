@@ -6,7 +6,7 @@ public class SoundPlay : MonoBehaviour
 {
     AudioSource sound;
     float angV;
-
+    bool fast = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,13 @@ public class SoundPlay : MonoBehaviour
     void LateUpdate()
     {
         angV = GetComponent<Rigidbody>().angularVelocity.magnitude;
-        if (angV > 2.0f)
+        if (angV > 2.0f && sound.isPlaying == false)
+        {
             sound.Play();
-        else
+        }
+        else if(angV < 2.0f)
+        {
             sound.Stop();
+        }
     }
 }
