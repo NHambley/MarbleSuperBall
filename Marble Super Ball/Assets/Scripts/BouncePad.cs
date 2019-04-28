@@ -6,6 +6,7 @@ public class BouncePad : MonoBehaviour {
     public GameObject player;
     bool airborn = false;
     Respawn resScript;
+    AudioSource sound;
 	// Use this for initialization
 	void Start ()
     {
@@ -14,6 +15,7 @@ public class BouncePad : MonoBehaviour {
             player = GameObject.FindGameObjectWithTag("Player");
         }
         resScript = player.GetComponent<Respawn>();
+        sound = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -33,5 +35,6 @@ public class BouncePad : MonoBehaviour {
         obj.GetComponent<Rigidbody>().AddForce(force);
 
         resScript.sepTimer += 3;
+        sound.Play();
     }
 }
