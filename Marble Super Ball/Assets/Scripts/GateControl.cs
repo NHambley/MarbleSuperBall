@@ -18,6 +18,7 @@ public class GateControl : MonoBehaviour
     Renderer rend;
     //Gate Door and desired end position
     public GameObject Door;
+    public float DoorMoveDistance;
     private float doorEndPosition;
 
 
@@ -25,7 +26,7 @@ public class GateControl : MonoBehaviour
     void Start()
     {
         activeLights = 0;
-        doorEndPosition = Door.transform.position.y - 8;
+        doorEndPosition = Door.transform.position.y - DoorMoveDistance;
 
     }
 

@@ -2028,6 +2028,11 @@ PrefabInstance:
       propertyPath: Buttons.Array.data[2]
       value: 
       objectReference: {fileID: 1590375892}
+    - target: {fileID: 7529837288780051786, guid: 1dbcb2a68b67ec645aa610becddaed0d,
+        type: 3}
+      propertyPath: DoorMoveDistance
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbcb2a68b67ec645aa610becddaed0d, type: 3}
 --- !u!1 &9014913392413676755 stripped
